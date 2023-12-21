@@ -3,7 +3,7 @@ import { defineField } from "sanity";
 const account = {
     name: "account",
     title: "Account",
-    type: "Document",
+    type: "document",
     fields: [
         defineField({
             name: 'providerType',
