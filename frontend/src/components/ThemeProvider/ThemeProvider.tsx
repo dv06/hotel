@@ -1,19 +1,24 @@
 'use client';
+
 import { useEffect, useState } from 'react';
+
 import ThemeContext from '@/context/themeContext';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const themeFromLocalStorage: boolean =
-    typeof localStorage != 'undefined' && localStorage.getItem('hotel-theme')
+  const themeFromStorage: boolean =
+    typeof localStorage !== 'undefined' && localStorage.getItem('hotel-theme')
       ? JSON.parse(localStorage.getItem('hotel-theme')!)
       : false;
-  const [darkTheme, setDarkTheme] = useState<boolean>(themeFromLocalStorage);
-  const [renderComponet, setRenderComponent] = useState(false);
+
+  const [darkTheme, setDarkTheme] = useState<boolean>(themeFromStorage);
+  const [renderComponent, setRenderComponent] = useState(false);
+
   useEffect(() => {
     setRenderComponent(true);
   }, []);
 
-  if (!renderComponet) return <></>;
+  if (!renderComponent) return <></>;
+
   return (
     <ThemeContext.Provider value={{ darkTheme, setDarkTheme }}>
       <div className={`${darkTheme ? 'dark' : ''} min-h-screen`}>
