@@ -53,7 +53,7 @@ const Search: FC<Props> = ({
             type='text'
             id='search'
             placeholder='Search...'
-            className='wd-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
+            className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
