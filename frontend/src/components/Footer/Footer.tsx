@@ -5,10 +5,12 @@ const Footer = () => {
   return (
     <footer className='mt-16'>
       <div className='container mx-auto px-4'>
-        <Link href='/' className='font-black text-tertiary-black'>
-          BookMyHotel.com
+        <Link href='/' className='font-black text-tertiary-dark'>
+          Hotel A
         </Link>
-        <h4 className='font-semibold text-[40px] py-6'>Contact</h4>
+
+        <h4 className='font-semibold text-[40px] py-6'>Contact Us</h4>
+
         <div className='flex flx-wrap gap-16 items-center justify-between'>
           <div className='flex-1'>
             <p>23 Yemen Road, Yemen</p>
@@ -25,6 +27,7 @@ const Footer = () => {
               <p className='ml-2'>dv</p>
             </div>
           </div>
+
           <div className='flex-1 md:text-right'>
             <p className='pb-4'>Our Story</p>
             <p className='pb-4'>Get in Touch</p>
@@ -32,6 +35,7 @@ const Footer = () => {
             <p className='pb-4'>Terms of Service</p>
             <p>Customer Assistance</p>
           </div>
+
           <div className='flex-1 md:text-right'>
             <p className='pb-4'>Dining Experience</p>
             <p className='pb-4'>Wellness</p>
