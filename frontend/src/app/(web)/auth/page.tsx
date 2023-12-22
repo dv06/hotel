@@ -19,6 +19,18 @@ const Auth = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const { data: session } = useSession();
+  console.log(session);
+  const loginHandler = async () => {
+    try {
+      await signIn();
+      //push the user to the home page
+    } catch (error) {
+      console.log(error);
+      toast.error('Something went wrong');
+    }
+  };
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -42,8 +54,14 @@ const Auth = () => {
           </h1>
           <p>OR</p>
           <span className='inline-flex items-center'>
-            <AiFillGithub className='mr-30 text-4xl cursor-pointer text-black dark:text-white'></AiFillGithub>
-            <FcGoogle className='ml-3 text-4xl cursor-pointer'></FcGoogle>
+            <AiFillGithub
+              onClick={loginHandler}
+              className='mr-30 text-4xl cursor-pointer text-black dark:text-white'
+            ></AiFillGithub>
+            <FcGoogle
+              onClick={loginHandler}
+              className='ml-3 text-4xl cursor-pointer'
+            ></FcGoogle>
           </span>
         </div>
         <form className='space-y-4 md:space-y-6' onSubmit={handleSubmit}>
@@ -85,7 +103,9 @@ const Auth = () => {
         <div>
           <p>
             Already have an account?
-            <button className='text-blue-700 underline'> Login</button>
+            <button onClick={loginHandler} className='text-blue-700 underline'>
+              Login
+            </button>
           </p>
         </div>
       </div>

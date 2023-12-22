@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'BookMyHotel.com',
+  title: 'Hotel A',
   description: 'Discover the best hotel rooms',
 };
 
